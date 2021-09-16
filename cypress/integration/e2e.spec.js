@@ -10,7 +10,7 @@ context('Automoção pata testes exploratórios no big', () => {
 
 
 
-    it.only('Deve realizar o teste exploratório no banner 1', () => {
+    it('Deve realizar o teste exploratório no banner 1', () => {
         cy.get('#truste-consent-button').click()
         cy.get('[data-testid="paginationDot"]').eq(0).click()
         cy.get('.regional-banners > a > img').click()
@@ -23,19 +23,19 @@ context('Automoção pata testes exploratórios no big', () => {
         cy.get('#btn-client-pre-email').click()
         cy.get('#btn-identified-user-button').click()
         cy.get('.edit-address-block-button').click()
-        cy.get('#vtexIdUI-custom-oauth').click()
+
     });
 
     it('Deve realizar o teste exploratório no banner 2', () => {
         cy.get('#truste-consent-button').click()
-        cy.get('[aria-label="Dot 2 of 11"]').click()
+        cy.get('[data-testid="paginationDot"]').eq(1).click()
         cy.get('[aria-label="2 of 11"]').click()
     });
 
     it('Deve realizar o teste exploratório no banner 3', () => {
         cy.get('#truste-consent-button').click()
-        cy.get('[aria-label="Dot 3 of 11"]').click()
-        cy.get('[aria-label="3 of 11"]').click()
+        cy.get('[data-testid="paginationDot"]').eq(2).click()
+        cy.get('.banners-cms > a > img').click
         cy.get(':nth-child(1) > .vtex-product-summary-2-x-container > .vtex-product-summary-2-x-clearLink > .vtex-product-summary-2-x-element > .bighiper-big-theme-1-x-buttonAddToCartContainer > .bighiper-big-theme-1-x-buttonAddToCart').click()
         cy.get('.vtex-store-icons-0-x-cartIcon > use').click()
         cy.wait(2000)
@@ -48,10 +48,10 @@ context('Automoção pata testes exploratórios no big', () => {
         cy.get('.edit-address-block-button').click()
     });
 
-    it('Deve realizar o teste exploratório no banner 4', () => {
+    it.only('Deve realizar o teste exploratório no banner 4', () => {
         cy.get('#truste-consent-button').click()
-        cy.get('[aria-label="Dot 4 of 11"]').click()
-        cy.get('[aria-label="4 of 11"]').click()
+        cy.get('[data-testid="paginationDot"]').eq(3).click()
+        cy.get('.banners-cms > a > img').click
         cy.get(':nth-child(1) > .vtex-product-summary-2-x-container > .vtex-product-summary-2-x-clearLink > .vtex-product-summary-2-x-element > .bighiper-big-theme-1-x-buttonAddToCartContainer > .bighiper-big-theme-1-x-buttonAddToCart').click()
         cy.get('.vtex-store-icons-0-x-cartIcon > use').click()
         cy.wait(2000)
@@ -66,7 +66,7 @@ context('Automoção pata testes exploratórios no big', () => {
 
     it('Deve realizar o teste exploratório no banner 5', () => {
         cy.get('#truste-consent-button').click()
-        cy.get('[aria-label="Dot 5 of 11"]').click()
+        cy.get('[data-testid="paginationDot"]').eq(4).click()
         cy.get('[aria-label="5 of 11"]').click()
         cy.get(':nth-child(1) > .vtex-product-summary-2-x-container > .vtex-product-summary-2-x-clearLink > .vtex-product-summary-2-x-element > .bighiper-big-theme-1-x-buttonAddToCartContainer > .bighiper-big-theme-1-x-buttonAddToCart').click()
         cy.get('.vtex-store-icons-0-x-cartIcon > use').click()
@@ -82,7 +82,7 @@ context('Automoção pata testes exploratórios no big', () => {
 
     it('Deve realizar o teste exploratório no banner 6', () => {
         cy.get('#truste-consent-button').click()
-        cy.get('[aria-label="Dot 6 of 11"]').click()
+        cy.get('[data-testid="paginationDot"]').eq(5).click()
         cy.get('[aria-label="6 of 11"]').click()
         cy.get(':nth-child(1) > .vtex-product-summary-2-x-container > .vtex-product-summary-2-x-clearLink > .vtex-product-summary-2-x-element > .bighiper-big-theme-1-x-buttonAddToCartContainer > .bighiper-big-theme-1-x-buttonAddToCart').click()
         cy.get('.vtex-store-icons-0-x-cartIcon > use').click()
@@ -98,7 +98,7 @@ context('Automoção pata testes exploratórios no big', () => {
 
     it('Deve realizar o teste exploratório no banner 7', () => {
         cy.get('#truste-consent-button').click()
-        cy.get('[aria-label="Dot 7 of 11"]').click()
+        cy.get('[data-testid="paginationDot"]').eq(6).click()
         cy.get('[aria-label="7 of 11"]').click()
         cy.get(':nth-child(1) > .vtex-product-summary-2-x-container > .vtex-product-summary-2-x-clearLink > .vtex-product-summary-2-x-element > .bighiper-big-theme-1-x-buttonAddToCartContainer > .bighiper-big-theme-1-x-buttonAddToCart').click()
         cy.get('.vtex-store-icons-0-x-cartIcon > use').click()
@@ -114,7 +114,7 @@ context('Automoção pata testes exploratórios no big', () => {
 
     it('Deve realizar o teste exploratório no banner 8', () => {
         cy.get('#truste-consent-button').click()
-        cy.get('[aria-label="Dot 8 of 11"]').click()
+        cy.get('[data-testid="paginationDot"]').eq(7).click()
         cy.get('[aria-label="8 of 11"]').click()
         cy.get(':nth-child(1) > .vtex-product-summary-2-x-container > .vtex-product-summary-2-x-clearLink > .vtex-product-summary-2-x-element > .bighiper-big-theme-1-x-buttonAddToCartContainer > .bighiper-big-theme-1-x-buttonAddToCart').click()
         cy.get('.vtex-store-icons-0-x-cartIcon > use').click()
@@ -130,7 +130,7 @@ context('Automoção pata testes exploratórios no big', () => {
 
     it('Deve realizar o teste exploratório no banner 9', () => {
         cy.get('#truste-consent-button').click()
-        cy.get('[aria-label="Dot 9 of 11"]').click()
+        cy.get('[data-testid="paginationDot"]').eq(8).click()
         cy.get('[aria-label="9 of 11"]').click()
         cy.get(':nth-child(1) > .vtex-product-summary-2-x-container > .vtex-product-summary-2-x-clearLink > .vtex-product-summary-2-x-element > .bighiper-big-theme-1-x-buttonAddToCartContainer > .bighiper-big-theme-1-x-buttonAddToCart').click()
         cy.get('.vtex-store-icons-0-x-cartIcon > use').click()
@@ -146,7 +146,7 @@ context('Automoção pata testes exploratórios no big', () => {
 
     it('Deve realizar o teste exploratório no banner 10', () => {
         cy.get('#truste-consent-button').click()
-        cy.get('[aria-label="Dot 10 of 11"]').click()
+        cy.get('[data-testid="paginationDot"]').eq(9).click()
         cy.get('[aria-label="10 of 11"]').click()
         cy.get(':nth-child(1) > .vtex-product-summary-2-x-container > .vtex-product-summary-2-x-clearLink > .vtex-product-summary-2-x-element > .bighiper-big-theme-1-x-buttonAddToCartContainer > .bighiper-big-theme-1-x-buttonAddToCart').click()
         cy.get('.vtex-store-icons-0-x-cartIcon > use').click()
@@ -162,7 +162,7 @@ context('Automoção pata testes exploratórios no big', () => {
 
     it('Deve realizar o teste exploratório no banner 11', () => {
         cy.get('#truste-consent-button').click()
-        cy.get('[aria-label="Dot 11 of 11"]').click()
+        cy.get('[data-testid="paginationDot"]').eq(10).click()
         cy.get('[aria-label="11 of 11"]').click()
         cy.get(':nth-child(1) > .vtex-product-summary-2-x-container > .vtex-product-summary-2-x-clearLink > .vtex-product-summary-2-x-element > .bighiper-big-theme-1-x-buttonAddToCartContainer > .bighiper-big-theme-1-x-buttonAddToCart').click()
         cy.get('.vtex-store-icons-0-x-cartIcon > use').click()
