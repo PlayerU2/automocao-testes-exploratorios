@@ -30,7 +30,7 @@ Cypress.Commands.add('preencherCep', (cep) => {
 })
 
 Cypress.Commands.add('selecionarBanner', (num) => {
-    cy.get('[data-testid="paginationDot"]').eq(num).should('exist')
+    cy.wait(5000)
     cy.get('[data-testid="paginationDot"]').eq(num).click()
     cy.get('[aria-roledescription="slide"]').eq(num).click()
 })
@@ -42,4 +42,10 @@ Cypress.Commands.add('adicionarProdutos', (quantidade) => {
     cy.get('.vtex-flex-layout-0-x-flexColChild > .bighiper-big-theme-1-x-buttonAddToCartContainer > .bighiper-big-theme-1-x-buttonQuantity > .bighiper-big-theme-1-x-buttonInputQuantity').type(quantidade)
     cy.get('.vtex-store-link-0-x-link').click()
     cy.get('#proceed-to-checkout').click()
+})
+
+Cypress.Commands.add('entrarEmail', (email) => {
+    cy.get('#client-pre-email').type(email)
+    cy.get('#btn-client-pre-email').click()
+    cy.get('#btn-identified-user-button').click()
 })
