@@ -30,7 +30,7 @@ Cypress.Commands.add('preencherCep', (cep) => {
 })
 
 Cypress.Commands.add('selecionarBanner', (num) => {
-    cy.wait(5000)
+    cy.get('[data-testid="paginationDot"]').eq(num).should('exist')
     cy.get('[data-testid="paginationDot"]').eq(num).click()
     cy.get('[aria-roledescription="slide"]').eq(num).click()
 })
@@ -44,8 +44,15 @@ Cypress.Commands.add('adicionarProdutos', (quantidade) => {
     cy.get('#proceed-to-checkout').click()
 })
 
-Cypress.Commands.add('entrarEmail', (email) => {
-    cy.get('#client-pre-email').type(email)
-    cy.get('#btn-client-pre-email').click()
-    cy.get('#btn-identified-user-button').click()
+Cypress.Commands.add('digitarCpf', (cpf) => {
+    cy.visit('login')
+    cy.get('.bighiper-login-0-x-inputContainer > .vtex-input > .vtex-input-prefix__group > .vtex-styleguide-9-x-input').type(cpf)
+    cy.get('.bighiper-login-0-x-buttonContainer > .vtex-button').click()
+    cy.get(':nth-child(3) > .MuiButtonBase-root > .MuiIconButton-label > .jss8').click()
+    cy.get('.bighiper-login-0-x-buttonContainer > .vtex-button').click()
+})
+
+Cypress.Commands.add('digitarSenha', (senha) => {
+cy.get('.bighiper-login-0-x-inputContainer > .vtex-input > .vtex-input-prefix__group > .vtex-styleguide-9-x-input').type(senha)
+cy.get('.bighiper-login-0-x-buttonContainer > .vtex-button').click()
 })
