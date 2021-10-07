@@ -12,10 +12,12 @@ context('Automoção pata testes exploratórios no big', () => {
 
 
 
-    it.only('Deve realizar o teste exploratório no banner 1', () => {
+    it('Deve realizar o teste exploratório no banner 1', () => {
         cy.selecionarBanner(0)
         cy.adicionarProdutos(3)
         cy.get('.edit-address-block-button').click()
+        cy.get('#scheduled-delivery-choose-Normal').click()
+        cy.get('[class="react-datepicker__day--selected"]').click()
     });
 
     it('Deve realizar o teste exploratório no banner 2', () => {
@@ -28,6 +30,21 @@ context('Automoção pata testes exploratórios no big', () => {
         cy.selecionarBanner(2)
         cy.adicionarProdutos(25)
         cy.get('.edit-address-block-button').click()
+        cy.get('#ship-postalCode').clear().type('06020-010')
+        cy.get('#ship-number').type('5040', { force: true })
+        cy.get('#ship-complement').type('Apartamento', { force: true })
+        cy.get('#scheduled-delivery-choose-Normal').click({ force: true })
+        cy.get('.react-datepicker__day--keyboard-selected').click()
+    });
+
+    it('Deve realizar o teste exploratório no banner 3 e validando calendário', () => {
+        cy.selecionarBanner(2)
+        cy.adicionarProdutos(25)
+        cy.get('.edit-address-block-button').click()
+        cy.get('#scheduled-delivery-choose-Normal').click({ force: true })
+        cy.get('.react-datepicker__day--keyboard-selected').click()
+        cy.get('#scheduled-delivery-Normal')
+        .should('contain', 'Das 16:00 às 18:00')
     });
 
     it('Deve realizar o teste exploratório no banner 4', () => {
